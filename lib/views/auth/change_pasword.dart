@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tranqulity/views/auth/create_new_password.dart';
+import 'package:tranqulity/views/home/view.dart';
 
 import '../../core/logic/helper_methods.dart';
 import '../../core/ui/app_button.dart';
 import '../../core/ui/app_image.dart';
-import '../../core/ui/app_verify_code.dart';
+import '../../core/ui/app_input.dart';
 
-class OtpView extends StatelessWidget {
-  const OtpView({super.key});
+class ChangePassword extends StatelessWidget {
+  const ChangePassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,22 +22,21 @@ class OtpView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            AppImage(image: "otp.png", bottomSpace: 24),
+            AppImage(image: "forget_password.png", bottomSpace: 24),
 
             Text(
-              "Verification",
+              "Change Your Password",
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24),
             ),
-            SizedBox(height: 8.h),
-            Text("Please enter the code sent on your \nphone"),
-            SizedBox(height: 34.h),
-            AppVerifyCode(),
-            SizedBox(height: 60.h),
+            SizedBox(height: 24.h),
 
+            AppInput(label: "Old Password", isPassword: true),
+            AppInput(label: "New Password", isPassword: true),
+            AppInput(label: "Confirm New Password", bottomSpace: 60, isPassword: true),
             AppButton(
-              text: "Verify",
+              text: "Change Password",
               onPressed: () {
-                goTo(page: CreateNewPassword(),canPop: false);
+                goTo(page: HomeView(), canPop: false);
               },
             ),
           ],

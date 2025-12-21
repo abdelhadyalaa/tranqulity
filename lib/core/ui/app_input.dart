@@ -7,7 +7,7 @@ class AppInput extends StatefulWidget {
   final String? suffixIcon;
   final Color? vColor;
   final String hint, label;
-  final bool withCountryCode, isPassword;
+  final bool withCountryCode, isPassword,isBig;
   final double? bottomSpace;
 
   const AppInput({
@@ -18,7 +18,7 @@ class AppInput extends StatefulWidget {
     this.withCountryCode = false,
     this.isPassword = false,
     this.bottomSpace,
-    this.vColor,
+    this.vColor,  this.isBig=false,
   });
 
   @override
@@ -36,19 +36,21 @@ class _AppInputState extends State<AppInput> {
         children: [
           Expanded(
             child: TextFormField(
+              maxLines: widget.isBig ?4:1,
               obscureText: widget.isPassword && isHidden,
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.grey.shade100,
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(color: Colors.black),
+                  borderSide: BorderSide(color: Colors.grey),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(color: Colors.blue, width: 2),
                 ),
                 labelText: widget.label,
+                labelStyle: TextStyle(color: Colors.black),
                 hintText: widget.hint,
                 suffixIcon: widget.isPassword
                     ? IconButton(

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../core/logic/helper_methods.dart';
 import '../../core/ui/app_button.dart';
 import '../../core/ui/app_image.dart';
 import '../../core/ui/app_input.dart';
 import '../../core/ui/app_picker.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../home/view.dart';
 
 class CreateNewPassword extends StatelessWidget {
   const CreateNewPassword({super.key});
@@ -36,9 +38,18 @@ class CreateNewPassword extends StatelessWidget {
             ),
             SizedBox(height: 34.h),
             AppInput(label: "Password", bottomSpace: 34, isPassword: true),
-            AppInput(label: "Confirm Password", bottomSpace: 34, isPassword: true,),
-            SizedBox(height: 50.h,),
-            AppButton(text: "Confirm"),
+            AppInput(
+              label: "Confirm Password",
+              bottomSpace: 34,
+              isPassword: true,
+            ),
+            SizedBox(height: 50.h),
+            AppButton(
+              text: "Confirm",
+              onPressed: () {
+                goTo(page: HomeView(),canPop: false);
+              },
+            ),
           ],
         ),
       ),

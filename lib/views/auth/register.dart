@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranqulity/core/logic/helper_methods.dart';
 import 'package:tranqulity/core/ui/app_button.dart';
 import 'package:tranqulity/core/ui/app_image.dart';
 import 'package:tranqulity/core/ui/app_input.dart';
+import 'package:tranqulity/views/home/view.dart';
 
 import '../../core/ui/app_login_or_register.dart';
 import '../../core/ui/app_upload_image.dart';
@@ -34,7 +36,10 @@ class RegisterView extends StatelessWidget {
                 bottomSpace: 16,
                 isPassword: true,
               ),
-              AppButton(text: "Sign Up"),
+              AppButton(text: "Sign Up",
+              onPressed: () {
+                goTo(page: HomeView());
+              },),
               AppLoginOrRegister(isLogin: false),
               SizedBox(height: 20.h),
             ],

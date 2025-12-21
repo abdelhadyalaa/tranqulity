@@ -6,7 +6,9 @@ import 'app_picker.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AppImageUpLoader extends StatefulWidget {
-  const AppImageUpLoader({super.key});
+  final String? image;
+
+  const AppImageUpLoader({super.key, this.image});
 
   @override
   State<AppImageUpLoader> createState() => _AppImageUpLoaderState();
@@ -19,21 +21,20 @@ class _AppImageUpLoaderState extends State<AppImageUpLoader> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-
         CircleAvatar(
           backgroundColor: const Color(0xff284243).withOpacity(0.15),
           radius: 75.r,
           child: _pickedImage == null
-              ? AppImage(image: "gallery.svg")
+              ? Center(child: AppImage(image: widget.image ?? "gallery.svg"))
               : ClipRRect(
-            borderRadius: BorderRadius.circular(75.r),
-            child: Image.file(
-              File(_pickedImage!.path),
-              fit: BoxFit.cover,
-              width: 150.r,
-              height: 150.r,
-            ),
-          ),
+                  borderRadius: BorderRadius.circular(75.r),
+                  child: Image.file(
+                    File(_pickedImage!.path),
+                    fit: BoxFit.cover,
+                    width: 150.r,
+                    height: 150.r,
+                  ),
+                ),
         ),
 
         Positioned(

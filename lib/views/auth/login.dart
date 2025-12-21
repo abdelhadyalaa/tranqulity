@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranqulity/core/logic/helper_methods.dart';
 import 'package:tranqulity/core/ui/app_button.dart';
 import 'package:tranqulity/core/ui/app_image.dart';
 import 'package:tranqulity/core/ui/app_input.dart';
+import 'package:tranqulity/views/auth/forget_password.dart';
 
 import '../../core/ui/app_button_forget.dart';
 import '../../core/ui/app_login_or_register.dart';
+import '../home/view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -38,7 +41,12 @@ class LoginView extends StatelessWidget {
               AppInput(label: "Password", isPassword: true),
               Align(
                 alignment: AlignmentDirectional.centerEnd,
-                child: AppButtonForget(text: "Forget Password?"),
+                child: AppButtonForget(
+                  text: "Forget Password?",
+                  onPressed: () {
+                    goTo(page: ForgetPasswordView(),canPop: false);
+                  },
+                ),
               ),
               Row(
                 children: [
@@ -52,11 +60,18 @@ class LoginView extends StatelessWidget {
                     child: AppImage(image: "finger.svg"),
                   ),
                   SizedBox(width: 8.w),
-                  Expanded(child: AppButton(text: "Log In")),
+                  Expanded(
+                    child: AppButton(
+                      text: "Log In",
+                      onPressed: () {
+                        goTo(page: HomeView(),canPop: false);
+                      },
+                    ),
+                  ),
                 ],
               ),
               SizedBox(height: 20.h),
-              AppLoginOrRegister(isLogin:  true,),
+              AppLoginOrRegister(isLogin: true),
 
               _Item(
                 text: "Login With Google",
@@ -94,12 +109,10 @@ class _Item extends StatelessWidget {
 
         Expanded(
           child: Container(
-
             padding: EdgeInsets.all(10),
             height: 50.h,
             width: double.infinity,
             decoration: BoxDecoration(
-
               color: color,
               borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(8),

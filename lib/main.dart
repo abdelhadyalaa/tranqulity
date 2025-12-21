@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranqulity/views/about_us.dart';
 import 'package:tranqulity/views/auth/create_new_password.dart';
 import 'package:tranqulity/views/auth/forget_password.dart';
 import 'package:tranqulity/views/auth/login.dart';
 import 'package:tranqulity/views/auth/otp.dart';
 import 'package:tranqulity/views/auth/register.dart';
+import 'package:tranqulity/views/home/pages/new_chat.dart';
+import 'package:tranqulity/views/home/pages/profile.dart';
+import 'package:tranqulity/views/home/view.dart';
 import 'package:tranqulity/views/on_bording.dart';
 import 'package:tranqulity/views/splah.dart';
+import 'package:tranqulity/views/suggest.dart';
 
 import 'core/logic/helper_methods.dart';
 
@@ -28,8 +33,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          appBarTheme:   AppBarTheme(
-            backgroundColor:Color(0xffFFFFFF) ,
+          appBarTheme: AppBarTheme(
+            backgroundColor: Color(0xffFFFFFF),
             elevation: 0,
           ),
           primaryColor: Color(0xff284243),
@@ -38,7 +43,6 @@ class MyApp extends StatelessWidget {
           ),
           fontFamily: 'Inter',
           textTheme: TextTheme(
-
             titleLarge: TextStyle(
               fontSize: 20.sp,
               fontWeight: FontWeight.bold,
@@ -55,11 +59,17 @@ class MyApp extends StatelessWidget {
         ),
         home: PageView(
           children: [
+            NewChat(),
+            // Suggest(),
+            // AboutUs(),
+            // ProfilePage(),
+            // HomeView(),
             // CreateNewPassword(),
             // OtpView(),
             // LoginView(),
             // ForgetPasswordView(),
-            RegisterView(),
+            // RegisterView(),
+            // SplashScreen(),
           ],
         ),
         navigatorKey: navKey,
