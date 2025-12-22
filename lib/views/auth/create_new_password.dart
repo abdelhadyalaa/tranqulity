@@ -5,8 +5,6 @@ import '../../core/logic/helper_methods.dart';
 import '../../core/ui/app_button.dart';
 import '../../core/ui/app_image.dart';
 import '../../core/ui/app_input.dart';
-import '../../core/ui/app_picker.dart';
-import 'package:image_picker/image_picker.dart';
 
 import '../home/view.dart';
 
@@ -17,7 +15,9 @@ class CreateNewPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
+        leading: IconButton(onPressed: () {
+          Navigator.pop(context);
+        }, icon: Icon(Icons.arrow_back)),
       ),
 
       body: SingleChildScrollView(

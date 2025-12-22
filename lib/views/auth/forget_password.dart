@@ -14,7 +14,9 @@ class ForgetPasswordView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
+        leading: IconButton(onPressed: () {
+          Navigator.pop(context);
+        }, icon: Icon(Icons.arrow_back)),
       ),
 
       body: SingleChildScrollView(
@@ -31,7 +33,7 @@ class ForgetPasswordView extends StatelessWidget {
             SizedBox(height: 34.h),
             AppInput(label: "Phone Number", bottomSpace: 34),
             AppButton(text: "Forget Password",onPressed: () {
-              goTo(page: OtpView(),canPop: false);
+              goTo(page: OtpView(),);
 
             },),
           ],

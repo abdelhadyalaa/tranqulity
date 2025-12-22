@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tranqulity/views/about_us.dart';
-import 'package:tranqulity/views/auth/create_new_password.dart';
-import 'package:tranqulity/views/auth/forget_password.dart';
 import 'package:tranqulity/views/auth/login.dart';
-import 'package:tranqulity/views/auth/otp.dart';
-import 'package:tranqulity/views/auth/register.dart';
-import 'package:tranqulity/views/home/pages/new_chat.dart';
 import 'package:tranqulity/views/home/pages/profile.dart';
 import 'package:tranqulity/views/home/view.dart';
-import 'package:tranqulity/views/on_bording.dart';
-import 'package:tranqulity/views/splah.dart';
-import 'package:tranqulity/views/suggest.dart';
-
+import 'package:tranqulity/views/splash.dart';
 import 'core/logic/helper_methods.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -22,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -57,21 +46,8 @@ class MyApp extends StatelessWidget {
           ),
           scaffoldBackgroundColor: Color(0xffFFFFFF),
         ),
-        home: PageView(
-          children: [
-            NewChat(),
-            // Suggest(),
-            // AboutUs(),
-            // ProfilePage(),
-            // HomeView(),
-            // CreateNewPassword(),
-            // OtpView(),
-            // LoginView(),
-            // ForgetPasswordView(),
-            // RegisterView(),
-            // SplashScreen(),
-          ],
-        ),
+        home: ProfilePage(),
+
         navigatorKey: navKey,
       ),
     );

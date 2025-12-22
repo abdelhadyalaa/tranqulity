@@ -7,6 +7,8 @@ import 'package:tranqulity/core/ui/app_input.dart';
 import 'package:tranqulity/core/ui/app_upload_image.dart';
 import 'package:tranqulity/views/auth/change_pasword.dart';
 
+import '../view.dart';
+
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
@@ -20,7 +22,7 @@ class ProfilePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 20.h),
-              Center(child: AppImageUpLoader()),
+              AppImageUpLoader(),
               SizedBox(height: 34.h),
               AppInput(label: "Name"),
               AppInput(label: "Phone Number"),
@@ -44,7 +46,19 @@ class ProfilePage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 34.h),
-              AppButton(text: "Save"),
+              AppButton(text: "Save",onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text("Every Thing Saved Successfully"),
+                    duration: Duration(seconds: 2),
+                    backgroundColor: Colors.green,
+                    behavior: SnackBarBehavior.floating,
+                  ),
+                );
+                Future.delayed(Duration(seconds: 3), () {
+                  goTo(page: HomeView());
+                });
+              },),
               SizedBox(height: 20.h),
               Row(
                 children: [

@@ -40,25 +40,22 @@ class _HomeViewState extends State<HomeView> {
         ),
       ),
       body: list[currentIndex].pages,
+      floatingActionButton: GestureDetector(
+        onTap: () {
+          goTo(page: NewChat());
+        },
 
-      floatingActionButton: Transform.translate(
-        offset: Offset(-5, -70),
-        child: GestureDetector(
-          onTap: () {
-            goTo(page: NewChat());
-          },
-          child: Container(
-            width: 60,
-            height: 60,
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(16.r),
-            ),
-            child: AppImage(image: "new_chat.svg"),
+        child: Container(
+          width: 60,
+          height: 60,
+          decoration: BoxDecoration(
+            color: Theme.of(context).primaryColor,
+            borderRadius: BorderRadius.circular(16.r),
           ),
+          child: AppImage(image: "new_chat.svg"),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
 
       bottomNavigationBar: Container(
         clipBehavior: Clip.antiAliasWithSaveLayer,

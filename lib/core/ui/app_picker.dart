@@ -38,7 +38,7 @@ class ImagePickerIcon extends StatelessWidget {
                 onTap: () => _pickImage(context, ImageSource.camera),
               ),
               _pickerItem(
-                imagePath: 'gallery.svg',
+                imagePath: 'choose_camera.svg',
                 label: 'Gallery',
                 onTap: () => _pickImage(context, ImageSource.gallery),
               ),

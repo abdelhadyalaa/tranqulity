@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../core/logic/helper_methods.dart';
-import '../core/ui/app_image.dart';
-import 'on_bording.dart';
+import 'on_boarding.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

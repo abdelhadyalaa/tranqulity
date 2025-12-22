@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranqulity/views/auth/login.dart';
+import 'package:tranqulity/views/suggest.dart';
 
+import '../../views/about_us.dart';
 import '../logic/helper_methods.dart';
 import 'app_image.dart';
 
@@ -49,15 +52,24 @@ class DrawerItem extends StatelessWidget {
               ],
             ),
           ),
-          _Item(title: "About Us", imageIcon: "info.svg"),
+          _Item(title: "About Us", imageIcon: "info.svg", page: AboutUs()),
           _Item(title: "Rate Our App", imageIcon: "rate.svg"),
-          _Item(title: "Suggestions", imageIcon: "suggestion.svg"),
+          _Item(
+            title: "Suggestions",
+            imageIcon: "suggestion.svg",
+            page: Suggest(),
+          ),
           _Item(
             title: "Enable Easy Login",
             imageIcon: "Subtract.svg",
             hasSwitch: true,
           ),
-          _Item(title: "Logout", imageIcon: "logout.svg", isLogout: true),
+          _Item(
+            title: "Logout",
+            imageIcon: "logout.svg",
+            isLogout: true,
+            page: LoginView(),
+          ),
         ],
       ),
     );
@@ -72,7 +84,6 @@ class _Item extends StatefulWidget {
   final bool hasSwitch;
 
   const _Item({
-    super.key,
     required this.title,
     required this.imageIcon,
     this.hasSwitch = false,

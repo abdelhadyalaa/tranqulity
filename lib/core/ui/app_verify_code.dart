@@ -21,8 +21,8 @@ class AppVerifyCode extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         separatorBuilder: (context, index) => SizedBox(width: 12.w),
         pinTheme: PinTheme(
-          fieldHeight: 60,
-          fieldWidth: 78,
+          fieldHeight: 60.h,
+          fieldWidth: 70.w,
           borderRadius: BorderRadius.circular(8.r),
           selectedColor: Color(0xffD75D72),
 

@@ -44,7 +44,7 @@ class LoginView extends StatelessWidget {
                 child: AppButtonForget(
                   text: "Forget Password?",
                   onPressed: () {
-                    goTo(page: ForgetPasswordView(),canPop: false);
+                    goTo(page: ForgetPasswordView(),);
                   },
                 ),
               ),
@@ -98,7 +98,7 @@ class _Item extends StatelessWidget {
   final String image, text;
   final Color? color;
 
-  const _Item({super.key, this.image = "", this.text = "", this.color});
+  const _Item({this.image = "", this.text = "", this.color});
 
   @override
   Widget build(BuildContext context) {
