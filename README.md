@@ -19,7 +19,7 @@ The UI/UX was meticulously designed in **Figma**, featuring a clean, minimal, an
 
 ## 🛠️ Tech Stack & Tools
 * **Frontend:** [Flutter](https://flutter.dev/) (Dart)
-* **Design:** [Figma](https://www.figma.com/)
+* **Design:** [Figma]([https://www.figma.com/](https://www.figma.com/design/KJf1EYKKNRXefygCPRJGre/Training?node-id=12-8729&t=dWguz0T5F1bXHMhp-0))
 * **Backend:** Firebase (Authentication & Cloud Firestore)
 * **Architecture:** Clean Architecture / MVC pattern
 * **Input Security:** Custom Regex Validation Layer
