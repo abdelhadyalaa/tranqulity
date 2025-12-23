@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/ui/app_image.dart';
 
 class ChatPage extends StatefulWidget {
-  ChatPage({super.key});
+  const ChatPage({super.key});
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -49,7 +49,7 @@ class _ChatPageState extends State<ChatPage> {
 }
 
 class _emptyTime extends StatelessWidget {
-  const _emptyTime({super.key});
+  const _emptyTime();
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +71,7 @@ class _emptyTime extends StatelessWidget {
 }
 
 class _fullTime extends StatelessWidget {
-  const _fullTime({super.key});
+  const _fullTime();
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +93,7 @@ class _fullTime extends StatelessWidget {
 class _Item extends StatelessWidget {
   final String title, time;
 
-  const _Item({super.key, required this.title, required this.time});
+  const _Item({required this.title, required this.time});
 
   @override
   Widget build(BuildContext context) {

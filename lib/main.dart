@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/views/home/view.dart';
-import 'package:tranqulity/views/splash.dart';
 import 'core/logic/helper_methods.dart';
 
 void main() {
