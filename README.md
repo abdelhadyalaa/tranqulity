@@ -43,7 +43,7 @@ The design focuses on clarity, accessibility, and consistency across all screens
 - 🛡️ Advanced Input Validation
   - Multi-layered validation using **Regex**
   - Business logic validation
-  - Error handling with user-friendly messages
+  - User-friendly error messages
 
 ---
 
@@ -57,7 +57,7 @@ The design focuses on clarity, accessibility, and consistency across all screens
 ---
 
 ## 🧱 Architecture Overview
-The project follows **Clean Architecture** principles with a clear separation of concerns:
+The project follows **Clean Architecture** principles with clear separation of concerns:
 
 - **Presentation Layer:** UI & Widgets
 - **Domain Layer:** Validation logic & business rules
@@ -83,6 +83,7 @@ This structure improves code readability, scalability, and maintainability.
 
 ### Installation
 ```bash
-git clone https://github.com/your-username/tranquility.git
+git clone https://github.com/abdelhadyalaa/tranquility.git
+cd tranquility
 flutter pub get
 flutter run
