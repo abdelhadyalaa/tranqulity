@@ -1,16 +1,30 @@
-# tranqulity
+# Tranquility 📱💬
+**Tranquility** هو تطبيق شات (مراسلة) آمن وعالي الأداء تم بناؤه باستخدام **Flutter**. يركز التطبيق على تقديم تجربة مستخدم سلسة مع اتباع نهج "الأمان أولاً"، وضمان سلامة البيانات من خلال أنظمة تحقق (Validation) قوية ومتقدمة.
 
-A new Flutter project.
+---
 
-## Getting Started
+## 🎨 التصميم (UI/UX)
+تم تصميم واجهة التطبيق بدقة باستخدام **Figma**، مع التركيز على الجماليات الهادئة والبسيطة لتقليل التشتت وتوفير تجربة مستخدم مريحة للعين.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ المميزات الرئيسية
+* **🔒 نظام تسجيل دخول آمن:** نظام توثيق قوي مع تحقق متقدم من صحة البيانات (Form Validation).
+* **💬 مراسلة فورية:** تحديثات شات سريعة وموثوقة في الوقت الفعلي.
+* **🔍 بحث متقدم:** إمكانية البحث عن المستخدمين الآخرين والتواصل معهم بسهولة.
+* **👤 إدارة الملف الشخصي:** ملفات شخصية مخصصة لكل مستخدم لإدارة هويته داخل التطبيق.
+* **🛡️ التحقق من البيانات:** طبقة كاملة من التحقق باستخدام (Regex) والمنطق البرمجي لضمان صحة جميع المدخلات.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ التقنيات والأدوات المستخدمة
+* **Frontend:** [Flutter](https://flutter.dev/) (Dart)
+* **Design Tool:** [Figma](https://www.figma.com/)
+* **Backend:** Firebase (Authentication & Cloud Firestore)
+* **Architecture:** Clean Architecture / MVC
+* **Security:** Advanced Regex Patterns for Input Validation
+
+---
+
+## 📸 لقطات من التطبيق (Screenshots)
+> **ملاحظة:** يمكنك سحب صور تطبيقك ووضعها هنا بدلاً من الروابط المؤقتة.
