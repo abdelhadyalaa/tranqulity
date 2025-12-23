@@ -1,30 +1,37 @@
 # Tranquility 📱💬
-**Tranquility** هو تطبيق شات (مراسلة) آمن وعالي الأداء تم بناؤه باستخدام **Flutter**. يركز التطبيق على تقديم تجربة مستخدم سلسة مع اتباع نهج "الأمان أولاً"، وضمان سلامة البيانات من خلال أنظمة تحقق (Validation) قوية ومتقدمة.
+**Tranquility** is a secure, high-performance chat application built with **Flutter**. The app is engineered with a "Security-First" philosophy, focusing on protecting user privacy and ensuring data integrity through a robust, custom-built validation system.
 
 ---
 
-## 🎨 التصميم (UI/UX)
-تم تصميم واجهة التطبيق بدقة باستخدام **Figma**، مع التركيز على الجماليات الهادئة والبسيطة لتقليل التشتت وتوفير تجربة مستخدم مريحة للعين.
+## 🎨 Design & UX
+The UI/UX was meticulously designed in **Figma**, featuring a clean, minimal, and "tranquil" aesthetic. Every interaction is designed to be intuitive while maintaining a professional and modern look.
 
 ---
 
-## ✨ المميزات الرئيسية
-* **🔒 نظام تسجيل دخول آمن:** نظام توثيق قوي مع تحقق متقدم من صحة البيانات (Form Validation).
-* **💬 مراسلة فورية:** تحديثات شات سريعة وموثوقة في الوقت الفعلي.
-* **🔍 بحث متقدم:** إمكانية البحث عن المستخدمين الآخرين والتواصل معهم بسهولة.
-* **👤 إدارة الملف الشخصي:** ملفات شخصية مخصصة لكل مستخدم لإدارة هويته داخل التطبيق.
-* **🛡️ التحقق من البيانات:** طبقة كاملة من التحقق باستخدام (Regex) والمنطق البرمجي لضمان صحة جميع المدخلات.
+## ✨ Key Features
+* **🔒 Robust Authentication:** Secure login and signup flows with advanced form validation.
+* **💬 Real-time Messaging:** Fast and reliable instant messaging powered by a real-time backend.
+* **🔍 User Discovery:** Integrated search system to find and connect with friends easily.
+* **👤 User Profiles:** Personalized profiles for users to manage their identity and presence.
+* **🛡️ Advanced Validation:** Multi-layered input validation using Regex to ensure data security and prevent errors.
 
 ---
 
-## 🛠️ التقنيات والأدوات المستخدمة
+## 🛠️ Tech Stack & Tools
 * **Frontend:** [Flutter](https://flutter.dev/) (Dart)
-* **Design Tool:** [Figma](https://www.figma.com/)
+* **Design:** [Figma](https://www.figma.com/)
 * **Backend:** Firebase (Authentication & Cloud Firestore)
-* **Architecture:** Clean Architecture / MVC
-* **Security:** Advanced Regex Patterns for Input Validation
+* **Architecture:** Clean Architecture / MVC pattern
+* **Input Security:** Custom Regex Validation Layer
 
 ---
 
-## 📸 لقطات من التطبيق (Screenshots)
-> **ملاحظة:** يمكنك سحب صور تطبيقك ووضعها هنا بدلاً من الروابط المؤقتة.
+## 📸 Screenshots & Demo
+> **Tip:** Drag and drop your actual app screenshots into the table below.
+
+| Login & Security | Chat Conversations | Search & Profile |
+| :---: | :---: | :---: |
+| <img src="https://via.placeholder.com/200x400?text=Login+Validation" width="200" /> | <img src="https://via.placeholder.com/200x400?text=Chat+List" width="200" /> | <img src="https://via.placeholder.com/200x400?text=User+Profile" width="200" /> |
+
+### 🎥 Live Demo
+*(Drag
