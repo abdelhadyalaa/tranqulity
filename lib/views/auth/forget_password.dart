@@ -8,35 +8,55 @@ import 'package:tranqulity/views/auth/otp.dart';
 import '../../core/logic/helper_methods.dart';
 
 class ForgetPasswordView extends StatelessWidget {
-  const ForgetPasswordView({super.key});
+  ForgetPasswordView({super.key});
+
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {
-          Navigator.pop(context);
-        }, icon: Icon(Icons.arrow_back)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
       ),
 
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            AppImage(image: "forget_password.png", bottomSpace: 24),
+      body: Form(
+        key: formKey,
 
-            Text(
-              "Forget Your Password",
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24),
-            ),
-            SizedBox(height: 34.h),
-            AppInput(label: "Phone Number", bottomSpace: 34),
-            AppButton(text: "Forget Password",onPressed: () {
-              goTo(page: OtpView(),);
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              AppImage(image: "forget_password.png", bottomSpace: 24),
 
-            },),
-          ],
+              Text(
+                "Forget Your Password",
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24),
+              ),
+              SizedBox(height: 34.h),
+              AppInput(label: "Phone Number", bottomSpace: 34,keyboardType: TextInputType.phone,),
+              AppButton(
+                text: "Forget Password",
+                onPressed: () {
+                  if (formKey.currentState?.validate() ?? false) {
+                    goTo(page: OtpView(), canPop: false);
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Sorry You Should Put Your Data ...."),
+                        backgroundColor: Colors.red.shade800,
+                      ),
+                    );
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

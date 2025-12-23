@@ -9,7 +9,8 @@ import '../../core/ui/app_input.dart';
 import '../home/view.dart';
 
 class CreateNewPassword extends StatelessWidget {
-  const CreateNewPassword({super.key});
+   CreateNewPassword({super.key});
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -20,37 +21,50 @@ class CreateNewPassword extends StatelessWidget {
         }, icon: Icon(Icons.arrow_back)),
       ),
 
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            AppImage(image: "forget_password.png", bottomSpace: 24),
+      body: Form(
+        key: formKey,
 
-            Text(
-              "Create New Password",
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24),
-            ),
-            SizedBox(height: 16.h),
-            Text(
-              "create your new password to log in !",
-              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
-            ),
-            SizedBox(height: 34.h),
-            AppInput(label: "Password", bottomSpace: 34, isPassword: true),
-            AppInput(
-              label: "Confirm Password",
-              bottomSpace: 34,
-              isPassword: true,
-            ),
-            SizedBox(height: 50.h),
-            AppButton(
-              text: "Confirm",
-              onPressed: () {
-                goTo(page: HomeView(),canPop: false);
-              },
-            ),
-          ],
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              AppImage(image: "forget_password.png", bottomSpace: 24),
+
+              Text(
+                "Create New Password",
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24),
+              ),
+              SizedBox(height: 16.h),
+              Text(
+                "create your new password to log in !",
+                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
+              ),
+              SizedBox(height: 34.h),
+              AppInput(label: "Password", bottomSpace: 34, isPassword: true),
+              AppInput(
+                label: "Confirm Password",
+                bottomSpace: 34,
+                isPassword: true,
+              ),
+              SizedBox(height: 50.h),
+              AppButton(
+                text: "Confirm",
+                onPressed: () {
+                  if (formKey.currentState?.validate() ?? false) {
+                    goTo(page: HomeView(), canPop: false);
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Sorry You Should Put Your Data ...."),
+                        backgroundColor: Colors.red.shade800,
+                      ),
+                    );
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

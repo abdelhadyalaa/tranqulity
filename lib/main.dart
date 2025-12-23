@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tranqulity/views/auth/login.dart';
-import 'package:tranqulity/views/home/pages/profile.dart';
 import 'package:tranqulity/views/home/view.dart';
 import 'package:tranqulity/views/splash.dart';
 import 'core/logic/helper_methods.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -19,6 +18,15 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
+        builder: (context, child) {
+          return GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            child: child,
+          );
+        },
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -46,7 +54,7 @@ class MyApp extends StatelessWidget {
           ),
           scaffoldBackgroundColor: Color(0xffFFFFFF),
         ),
-        home: ProfilePage(),
+        home:HomeView(),
 
         navigatorKey: navKey,
       ),

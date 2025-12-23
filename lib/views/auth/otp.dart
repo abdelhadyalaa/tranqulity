@@ -8,41 +8,59 @@ import '../../core/ui/app_image.dart';
 import '../../core/ui/app_verify_code.dart';
 
 class OtpView extends StatelessWidget {
-  const OtpView({super.key});
+  OtpView({super.key});
+
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {
-          Navigator.pop(context);
-        }, icon: Icon(Icons.arrow_back)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
       ),
 
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            AppImage(image: "otp.png", bottomSpace: 24),
+      body: Form(
+        key: formKey,
 
-            Text(
-              "Verification",
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24),
-            ),
-            SizedBox(height: 8.h),
-            Text("Please enter the code sent on your \nphone"),
-            SizedBox(height: 34.h),
-            AppVerifyCode(),
-            SizedBox(height: 60.h),
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              AppImage(image: "otp.png", bottomSpace: 24),
 
-            AppButton(
-              text: "Verify",
-              onPressed: () {
-                goTo(page: CreateNewPassword());
-              },
-            ),
-          ],
+              Text(
+                "Verification",
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24),
+              ),
+              SizedBox(height: 8.h),
+              Text("Please enter the code sent on your \nphone"),
+              SizedBox(height: 34.h),
+              AppVerifyCode(),
+              SizedBox(height: 60.h),
+
+              AppButton(
+                text: "Verify",
+                onPressed: () {
+                  if (formKey.currentState?.validate() ?? false) {
+                    goTo(page: CreateNewPassword(), canPop: false);
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Sorry You Should Put Your Code ...."),
+                        backgroundColor: Colors.red.shade800,
+                      ),
+                    );
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

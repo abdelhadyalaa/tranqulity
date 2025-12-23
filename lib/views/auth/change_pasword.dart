@@ -8,38 +8,59 @@ import '../../core/ui/app_image.dart';
 import '../../core/ui/app_input.dart';
 
 class ChangePassword extends StatelessWidget {
-  const ChangePassword({super.key});
+  ChangePassword({super.key});
+
+  var formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
+        leading: IconButton(onPressed: () {
+          Navigator.pop(context);
+        }, icon: Icon(Icons.arrow_back)),
       ),
 
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            AppImage(image: "forget_password.png", bottomSpace: 24),
+      body: Form(
+        key: formKey,
 
-            Text(
-              "Change Your Password",
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24),
-            ),
-            SizedBox(height: 24.h),
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              AppImage(image: "forget_password.png", bottomSpace: 24),
 
-            AppInput(label: "Old Password", isPassword: true),
-            AppInput(label: "New Password", isPassword: true),
-            AppInput(label: "Confirm New Password", bottomSpace: 60, isPassword: true),
-            AppButton(
-              text: "Change Password",
-              onPressed: () {
-                goTo(page: HomeView(), canPop: false);
-              },
-            ),
-          ],
+              Text(
+                "Change Your Password",
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 24),
+              ),
+              SizedBox(height: 24.h),
+
+              AppInput(label: "Old Password", isPassword: true),
+              AppInput(label: "New Password", isPassword: true),
+              AppInput(
+                label: "Confirm New Password",
+                bottomSpace: 60,
+                isPassword: true,
+              ),
+              AppButton(
+                text: "Change Password",
+                onPressed: () {
+                  if (formKey.currentState?.validate() ?? false) {
+                    goTo(page: HomeView(), canPop: false);
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Sorry You Should Put Your Data ...."),
+                        backgroundColor: Colors.red.shade800,
+                      ),
+                    );
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

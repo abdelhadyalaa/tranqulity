@@ -67,7 +67,7 @@ class _HomeViewState extends State<HomeView> {
           },
           currentIndex: currentIndex,
           selectedFontSize: 12,
-          unselectedFontSize: 10,
+          unselectedFontSize: 12,
           backgroundColor: Colors.transparent,
           elevation: 0,
           type: BottomNavigationBarType.fixed,

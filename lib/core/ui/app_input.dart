@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'app_image.dart';
 
 class AppInput extends StatefulWidget {
   final String? suffixIcon;
+  final TextInputType keyboardType;
   final Color? vColor;
   final String hint, label;
-  final bool withCountryCode, isPassword,isBig;
+  final bool withCountryCode, isPassword, isBig;
   final double? bottomSpace;
 
   const AppInput({
@@ -18,7 +18,9 @@ class AppInput extends StatefulWidget {
     this.withCountryCode = false,
     this.isPassword = false,
     this.bottomSpace,
-    this.vColor,  this.isBig=false,
+    this.vColor,
+    this.isBig = false,
+    this.keyboardType = TextInputType.text,
   });
 
   @override
@@ -36,7 +38,14 @@ class _AppInputState extends State<AppInput> {
         children: [
           Expanded(
             child: TextFormField(
-              maxLines: widget.isBig ?4:1,
+              keyboardType: widget.keyboardType,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return widget.isPassword?"Please Put Your Password":'Please Put Your Data';
+                }
+                return null;
+              },
+              maxLines: widget.isBig ? 4 : 1,
               obscureText: widget.isPassword && isHidden,
               decoration: InputDecoration(
                 filled: true,

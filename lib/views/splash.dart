@@ -1,8 +1,6 @@
 import 'package:animate_do/animate_do.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../core/logic/helper_methods.dart';
 import 'on_boarding.dart';
 
