@@ -38,6 +38,7 @@ class _AppInputState extends State<AppInput> {
         children: [
           Expanded(
             child: TextFormField(
+
               keyboardType: widget.keyboardType,
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -49,12 +50,16 @@ class _AppInputState extends State<AppInput> {
               obscureText: widget.isPassword && isHidden,
               decoration: InputDecoration(
                 filled: true,
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.red, width: 2.0),
+                ),
                 fillColor: Colors.grey.shade100,
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: BorderSide(color: Colors.grey),
                 ),
                 focusedBorder: OutlineInputBorder(
+
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(color: Colors.blue, width: 2),
                 ),
