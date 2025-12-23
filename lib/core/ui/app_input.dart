@@ -38,11 +38,12 @@ class _AppInputState extends State<AppInput> {
         children: [
           Expanded(
             child: TextFormField(
-
               keyboardType: widget.keyboardType,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return widget.isPassword?"Please Put Your Password":'Please Put Your Data';
+                  return widget.isPassword
+                      ? "Please Put Your Password"
+                      : 'Please Put Your Data';
                 }
                 return null;
               },
@@ -53,13 +54,17 @@ class _AppInputState extends State<AppInput> {
                 errorBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.red, width: 2.0),
                 ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(5),
+                  borderSide: const BorderSide(color: Colors.red, width: 2.0),
+                ),
+
                 fillColor: Colors.grey.shade100,
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: BorderSide(color: Colors.grey),
                 ),
                 focusedBorder: OutlineInputBorder(
-
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(color: Colors.blue, width: 2),
                 ),
