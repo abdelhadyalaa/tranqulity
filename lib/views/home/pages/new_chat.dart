@@ -4,10 +4,30 @@ import 'package:tranqulity/core/logic/helper_methods.dart';
 import 'package:tranqulity/core/ui/app_button.dart';
 import 'package:tranqulity/core/ui/app_image.dart';
 import 'package:tranqulity/core/ui/app_input.dart';
-import 'package:tranqulity/views/home/view.dart';
+import 'package:tranqulity/views/current_chat.dart';
 
-class NewChat extends StatelessWidget {
+class NewChat extends StatefulWidget {
   const NewChat({super.key});
+
+  @override
+  State<NewChat> createState() => _NewChatState();
+}
+
+class _NewChatState extends State<NewChat> {
+  late TextEditingController titleController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    titleController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    titleController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +41,7 @@ class NewChat extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              height: 300,
+              height: 350,
               width: 430,
               color: Colors.grey.withValues(alpha: .10),
               child: Column(
@@ -67,12 +87,24 @@ class NewChat extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 16.h),
-                  AppInput(label: "Enter The Title Of Chat"),
+                  AppInput(label: "Enter The Title Of Chat",controller: titleController,),
                   SizedBox(height: 24.h),
                   AppButton(
+
                     text: "Start Chat",
                     onPressed: () {
-                      goTo(page: HomeView(),canPop: false);
+
+                      if (titleController.text.isNotEmpty) {
+                        goTo(
+                          page: CurrentChat(title: titleController.text),
+                          canPop: false,
+                        );
+                      } else {
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text("Please enter a title first")),
+                        );
+                      }
                     },
                   ),
                 ],

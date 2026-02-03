@@ -5,6 +5,7 @@ import 'app_image.dart';
 class AppInput extends StatefulWidget {
   final String? suffixIcon;
   final TextInputType keyboardType;
+  final TextEditingController? controller;
   final Color? vColor;
   final String hint, label;
   final bool withCountryCode, isPassword, isBig;
@@ -20,7 +21,7 @@ class AppInput extends StatefulWidget {
     this.bottomSpace,
     this.vColor,
     this.isBig = false,
-    this.keyboardType = TextInputType.text,
+    this.keyboardType = TextInputType.text,  this.controller,
   });
 
   @override
@@ -38,6 +39,7 @@ class _AppInputState extends State<AppInput> {
         children: [
           Expanded(
             child: TextFormField(
+              controller: widget.controller,
               keyboardType: widget.keyboardType,
               validator: (value) {
                 if (value == null || value.isEmpty) {

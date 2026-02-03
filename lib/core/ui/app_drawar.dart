@@ -31,7 +31,7 @@ class DrawerItem extends StatelessWidget {
               children: const [
                 CircleAvatar(
                   radius: 80,
-                  backgroundImage: AssetImage("assets/images/boarding_one.png"),
+                  backgroundImage: AssetImage("assets/images/boarding1.png"),
                 ),
                 SizedBox(height: 12),
                 Text(

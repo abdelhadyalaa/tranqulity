@@ -15,19 +15,19 @@ class PageOne extends StatefulWidget {
 class _PageOneState extends State<PageOne> {
   final list = [
     _Model(
-      image: "boarding_one.png",
+      image: "boarding1.png",
       title: "Feel Free",
       desc:
           "because I'm the friendly chatbot \nhere to assist you with anything you need.",
     ),
     _Model(
-      image: "boarding_two.png",
+      image: "boarding2.png",
       title: "Ask For Anything",
       desc:
           "I'm your friendly neighborhood \nchatbot ready to assist you with \nany questions or concerns.",
     ),
     _Model(
-      image: "boarding_three.png",
+      image: "boarding3.png",
       title: "Your Secert is Save",
       desc: "Our platform prioritizes your privacy and security",
     ),

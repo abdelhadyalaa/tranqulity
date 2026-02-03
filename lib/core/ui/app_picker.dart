@@ -4,7 +4,7 @@ import 'package:tranqulity/core/ui/app_image.dart';
 
 class ImagePickerIcon extends StatelessWidget {
   final Function(XFile file) onImagePicked;
-  final String icon; // أيقونة مخصصة
+  final String icon;
 
 
   const ImagePickerIcon({super.key, required this.onImagePicked, required this.icon});

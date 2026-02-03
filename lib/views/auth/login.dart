@@ -29,7 +29,7 @@ class LoginView extends StatelessWidget {
                 SizedBox(height: 50.h),
                 AppImage(image: "login.png"),
                 SizedBox(height: 24.h),
-                Text("Welcome To"),
+                Text("Welcome To",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20.sp),),
                 SizedBox(height: 6.h),
                 Text(
                   "Tranquility",
